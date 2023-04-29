@@ -112,7 +112,7 @@ class you_screen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(40),
                       color: Colors.blue),
                   child: const Center(
-                    child: Text("Login",
+                    child: Text("Check details",
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 18,
@@ -121,6 +121,59 @@ class you_screen extends StatelessWidget {
                 ),
               )
             ],
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          InkWell(
+            onTap: () {
+              final snackbar = SnackBar(
+                content: const Text("enter all details corectly"),
+                action: SnackBarAction(
+                  label: "see details",
+                  onPressed: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                            title: Text("Details Submited"),
+                            content: Container(
+                              height: 100,
+                              child: Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text("Email : " + emailcontroller.text),
+                                    Text("Password : " +
+                                        Passwordcontroller.text),
+                                    Text("Password : " +
+                                        Passwordcontroller2.text),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          );
+                        });
+                  },
+                ),
+              );
+
+              ScaffoldMessenger.of(context).showSnackBar(snackbar);
+            },
+            child: Container(
+              height: 60,
+              width: 180,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(40), color: Colors.blue),
+              child: const Center(
+                child: Text("Login",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                    )),
+              ),
+            ),
           ),
         ],
       ),
