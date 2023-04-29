@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:test02/dashboard.dart';
 import 'package:test02/second_screen.dart';
+import 'package:test02/splash_screen.dart';
 import 'package:test02/youtube.dart';
 
 void main() {
@@ -12,8 +13,8 @@ class firstclass extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Constant(),
+    return MaterialApp(
+      home: Splash(),
       title: "My App",
       debugShowCheckedModeBanner: false,
     );
