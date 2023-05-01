@@ -16,17 +16,40 @@ class _Second_screenState extends State<Second_screen> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.white,
-        body: GridView.builder(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2, crossAxisSpacing: 4, mainAxisSpacing: 4),
-          itemCount: size.length,
-          itemBuilder: (BuildContext context, int index) {
-            return Container(
-              height: 400,
-              width: 400,
-              color: Colors.red,
-            );
-          },
+        appBar: AppBar(
+          elevation: 0,
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: const [
+              Text(
+                "Cart",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Icon(
+                Icons.search,
+                size: 30,
+              )
+            ],
+          ),
+        ),
+        body: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 4),
+          child: GridView.builder(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2, crossAxisSpacing: 4, mainAxisSpacing: 4),
+            itemCount: size.length,
+            itemBuilder: (BuildContext context, int index) {
+              return Container(
+                height: 400,
+                width: 400,
+                color: Colors.blue,
+              );
+            },
+          ),
         )
 
         /* Stack(alignment: Alignment.center, children: [
